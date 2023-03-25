@@ -1,0 +1,151 @@
+package connexion;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+import modele.Arbitre;
+import modele.Compte;
+import modele.Ecurie;
+import modele.Ecurie.Statut;
+import modele.Equipe;
+import modele.Gestionnaire;
+import modele.Jeu;
+import modele.Joueur;
+import modele.Rencontre;
+import modele.Responsable;
+import modele.Tournoi;
+import modele.Tournoi.Categorie;
+
+public class Main {
+
+	public static void main(String[] args) throws SQLException {
+		ConnexionBDD.connecting();
+//		ConnexionBDD connect = new ConnexionBDD("CNP3364A", "$iutinfo", "jdbc:oracle:thin:@telline.univ-tlse3.fr:1521:ETUPRE");
+//		Connection connx = connect.connecting();
+//		
+//		Jeu LOL = new Jeu("League Of Legends", 2);
+////		Jeu Dota2 = new Jeu("Dota 2", 5);
+////		Jeu CSGO = new Jeu("Counter-Strike: Global Offensive", 5);
+////		Jeu Valorant = new Jeu("Valorant",5);
+////		Jeu COD = new Jeu("Call Of Duty", 5);
+//		Jeu Fortnite = new Jeu("Fortnite", 2);
+//		
+//		Responsable r1 = new Responsable("Boude", "Francoise", "0652334281", Compte.passwordHash("mdp123"));
+//		Responsable r2 = new Responsable("Bof", "Monique", "0652334232", Compte.passwordHash("mdp123"));
+		
+		//ConnexionBDD.enregistrerArbitre(new Arbitre("jean.arbitre2", "arbitre2", "jean", "1234567890", "mdp123"));
+		//ConnexionBDD.enregistrerEcurie(new Ecurie(Ecurie.generateId("Ecurie100"), "Ecurie100", "mdp123", Ecurie.Statut.PROFESSIONNELLE));
+		System.out.println(ConnexionBDD.getTournois().get(1).getNom());
+		//System.out.println(connect.getJeuFromIdJeu(connx, 5).getNbJoueurs());
+
+		//connect.enregistrerResponsable(connx, r1);
+		//connect.enregistrerResponsable(connx, r2);
+		
+		//connect.supprimerTournoi(connx, connect.getTournois(connx).get(2));
+
+//		connect.enregistrerGestionnaire(connx, new Gestionnaire("Terrieur", "Alex", "0652334290", Compte.passwordHash("mdp123")));
+//		connect.enregistrerTournoi(connx, new Tournoi("Tournoi1", Categorie.LOCAL, LOL, "01/01/2023", "02/01/2023", "11/10/2022", "10h00", r1));
+//		connect.enregistrerTournoi(connx, new Tournoi("Tournoi2", Categorie.INTERNATIONAL, Fortnite, "01/01/2023", "02/01/2023", "11/10/2022", "10h00", r2));
+//		Ecurie ecurie1 = new Ecurie("Ecurie2", Compte.passwordHash("mdp123"), Statut.ASSOCIATIVE);
+//		Ecurie ecurie2 = new Ecurie("Ecurie1", Compte.passwordHash("mdp123"), Statut.PROFESSIONNELLE);
+//		connect.enregistrerEcurie(connx, ecurie1);
+//		connect.enregistrerEcurie(connx, ecurie2);
+//		Equipe equipe1 = new Equipe("Equipe1", Compte.passwordHash("mdp123"), LOL, ecurie1);
+//		Equipe equipe2 = new Equipe("Equipe2", Compte.passwordHash("mdp123"), LOL, ecurie1);
+//		Equipe equipe3 = new Equipe("Equipe3", Compte.passwordHash("mdp123"), LOL, ecurie1);
+//		Equipe equipe4 = new Equipe("Equipe4", Compte.passwordHash("mdp123"), LOL, ecurie1);
+//		Equipe equipe5 = new Equipe("Equipe5", Compte.passwordHash("mdp123"), LOL, ecurie1);
+//		Equipe equipe6 = new Equipe("Equipe6", Compte.passwordHash("mdp123"), LOL, ecurie1);
+//		Equipe equipe7 = new Equipe("Equipe7", Compte.passwordHash("mdp123"), LOL, ecurie1);
+//		Equipe equipe8 = new Equipe("Equipe8", Compte.passwordHash("mdp123"), LOL, ecurie1);
+//		Equipe equipe9 = new Equipe("Equipe9", Compte.passwordHash("mdp123"), LOL, ecurie2);
+//		Equipe equipe10 = new Equipe("Equipe10", Compte.passwordHash("mdp123"), LOL, ecurie2);
+//		Equipe equipe11 = new Equipe("Equipe11", Compte.passwordHash("mdp123"), LOL, ecurie2);
+//		Equipe equipe12 = new Equipe("Equipe12", Compte.passwordHash("mdp123"), LOL, ecurie2);
+//		Equipe equipe13 = new Equipe("Equipe13", Compte.passwordHash("mdp123"), LOL, ecurie2);
+//		Equipe equipe14 = new Equipe("Equipe14", Compte.passwordHash("mdp123"), LOL, ecurie2);
+//		Equipe equipe15 = new Equipe("Equipe15", Compte.passwordHash("mdp123"), LOL, ecurie2);
+//		Equipe equipe16 = new Equipe("Equipe16", Compte.passwordHash("mdp123"), LOL, ecurie2);
+//		connect.enregistrerEquipe(connx, equipe1);
+//		connect.enregistrerEquipe(connx, equipe2);
+//		connect.enregistrerEquipe(connx, equipe3);
+//		connect.enregistrerEquipe(connx, equipe4);
+//		connect.enregistrerEquipe(connx, equipe5);
+//		connect.enregistrerEquipe(connx, equipe6);
+//		connect.enregistrerEquipe(connx, equipe7);
+//		connect.enregistrerEquipe(connx, equipe8);
+//		connect.enregistrerEquipe(connx, equipe9);
+//		connect.enregistrerEquipe(connx, equipe10);
+//		connect.enregistrerEquipe(connx, equipe11);
+//		connect.enregistrerEquipe(connx, equipe12);
+//		connect.enregistrerEquipe(connx, equipe13);
+//		connect.enregistrerEquipe(connx, equipe14);
+//		connect.enregistrerEquipe(connx, equipe15);
+//		connect.enregistrerEquipe(connx, equipe16);
+//		Joueur joueur1 = new Joueur("Mahe", "Yanis", "0752354208", "Yanouu", Compte.passwordHash("mdp123"), equipe1);
+//		Joueur joueur2 = new Joueur("Vaisselle", "Aude", "0752354208", "Audi", Compte.passwordHash("mdp123"), equipe1);
+//		Joueur joueur3 = new Joueur("Castex", "Jean", "0752354208", "Castoux", Compte.passwordHash("mdp123"), equipe2);
+//		Joueur joueur4 = new Joueur("Cament", "Mehdi", "0752354208", "Medoc", Compte.passwordHash("mdp123"), equipe2);
+//		Joueur joueur5 = new Joueur("Avos", "Marc", "0752354208", "Prepartez", Compte.passwordHash("mdp123"), equipe3);
+//		Joueur joueur6 = new Joueur("Fiat", "Giovanni", "0752354208", "GiovanniPizza", Compte.passwordHash("mdp123"), equipe3);
+//		Joueur joueur7 = new Joueur("Piccolo", "Paolo", "0752354208", "Piccolino", Compte.passwordHash("mdp123"), equipe4);
+//		Joueur joueur8 = new Joueur("Spaghetti", "Luigi", "0752354208", "Farfalle", Compte.passwordHash("mdp123"), equipe4);
+//		Joueur joueur9 = new Joueur("Gelatto", "Mario", "0752354208", "Lasagno", Compte.passwordHash("mdp123"), equipe5);
+//		Joueur joueur10 = new Joueur("Hercher", "Gwen", "0754334208", "Adranir", Compte.passwordHash("mdp123"), equipe5);
+//		Joueur joueur11 = new Joueur("Lejeune", "Ninette ", "0752354208", "BurgerThunder", Compte.passwordHash("mdp123"), equipe6);
+//		Joueur joueur12 = new Joueur("Moreau", "Catherine", "0752354208", "MissLuck", Compte.passwordHash("mdp123"), equipe6);
+//		Joueur joueur13 = new Joueur("Guilmette", "Chappell", "0752354208", "DocteurRonin", Compte.passwordHash("mdp123"), equipe7);
+//		Joueur joueur14 = new Joueur("Valérie", "Alexandre", "0752354208", "TruckShoot", Compte.passwordHash("mdp123"), equipe7);
+//		Joueur joueur15 = new Joueur("Trudeau", "Bernard", "0752354208", "AuraSol", Compte.passwordHash("mdp123"), equipe8);
+//		Joueur joueur16 = new Joueur("Guilmette", "Trinette", "0752354208", "ShoqapikWait", Compte.passwordHash("mdp123"), equipe8);
+//		Joueur joueur17 = new Joueur("Vaillancourt", "Patricia", "0752354208", "RealityGeek", Compte.passwordHash("mdp123"), equipe9);
+//		Joueur joueur18 = new Joueur("Coulombe", "Troy", "0752354208", "ChickenCaptain", Compte.passwordHash("mdp123"), equipe9);
+//		Joueur joueur19 = new Joueur("Hétu", "Emile", "0752354208", "ZeCovid", Compte.passwordHash("mdp123"), equipe10);
+//		Joueur joueur20 = new Joueur("Couturier", "Dominique", "0754334208", "DianteLotus", Compte.passwordHash("mdp123"), equipe10);
+//		Joueur joueur21 = new Joueur("Labossière", "Susane", "0752354208", "ChocolatineGiveup", Compte.passwordHash("mdp123"), equipe11);
+//		Joueur joueur22 = new Joueur("Rondex", "Iva", "0752354208", "GhostStun", Compte.passwordHash("mdp123"), equipe11);
+//		Joueur joueur23 = new Joueur("Thériault", "Ila", "0752354208", "ThunderVador", Compte.passwordHash("mdp123"), equipe12);
+//		Joueur joueur24 = new Joueur("Gaudreau", "Quincy", "0752354208", "NightLotus", Compte.passwordHash("mdp123"), equipe12);
+//		Joueur joueur25 = new Joueur("Boileau", "Amélie", "0752354208", "DogMini", Compte.passwordHash("mdp123"), equipe13);
+//		Joueur joueur26 = new Joueur("Paige", "Gregoire", "0752354208", "BearTyra", Compte.passwordHash("mdp123"), equipe13);
+//		Joueur joueur27 = new Joueur("Chateau", "Agathe", "0752354208", "TheMiss", Compte.passwordHash("mdp123"), equipe14);
+//		Joueur joueur28 = new Joueur("Honor", "Hébert", "0752354208", "EpicDragon", Compte.passwordHash("mdp123"), equipe14);
+//		Joueur joueur29 = new Joueur("Rouleau", "Amorette", "0754334208", "GoodRider", Compte.passwordHash("mdp123"), equipe15);
+//		Joueur joueur30 = new Joueur("Lamoureux", "Henry", "0754334208", "RexPoney", Compte.passwordHash("mdp123"), equipe15);
+//		Joueur joueur31 = new Joueur("Arsen", "Rive ", "0754334208", "ColossusDemon", Compte.passwordHash("mdp123"), equipe16);
+//		Joueur joueur32 = new Joueur("Lopici", "Martine", "0754334208", "JackdanielPepito", Compte.passwordHash("mdp123"), equipe16);
+//		connect.enregistrerJoueur(connx, joueur1);
+//		connect.enregistrerJoueur(connx, joueur2);
+//		connect.enregistrerJoueur(connx, joueur3);
+//		connect.enregistrerJoueur(connx, joueur4);
+//		connect.enregistrerJoueur(connx, joueur5);
+//		connect.enregistrerJoueur(connx, joueur6);
+//		connect.enregistrerJoueur(connx, joueur7);
+//		connect.enregistrerJoueur(connx, joueur8);
+//		connect.enregistrerJoueur(connx, joueur9);
+//		connect.enregistrerJoueur(connx, joueur10);
+//		connect.enregistrerJoueur(connx, joueur11);
+//		connect.enregistrerJoueur(connx, joueur12);
+//		connect.enregistrerJoueur(connx, joueur13);
+//		connect.enregistrerJoueur(connx, joueur14);
+//		connect.enregistrerJoueur(connx, joueur15);
+//		connect.enregistrerJoueur(connx, joueur16);
+//		connect.enregistrerJoueur(connx, joueur17);
+//		connect.enregistrerJoueur(connx, joueur18);
+//		connect.enregistrerJoueur(connx, joueur19);
+//		connect.enregistrerJoueur(connx, joueur20);
+//		connect.enregistrerJoueur(connx, joueur21);
+//		connect.enregistrerJoueur(connx, joueur22);
+//		connect.enregistrerJoueur(connx, joueur23);
+//		connect.enregistrerJoueur(connx, joueur24);
+//		connect.enregistrerJoueur(connx, joueur25);
+//		connect.enregistrerJoueur(connx, joueur26);
+//		connect.enregistrerJoueur(connx, joueur27);
+//		connect.enregistrerJoueur(connx, joueur28);
+//		connect.enregistrerJoueur(connx, joueur29);
+//		connect.enregistrerJoueur(connx, joueur30);
+//		connect.enregistrerJoueur(connx, joueur31);
+//		connect.enregistrerJoueur(connx, joueur32);
+	}
+}
